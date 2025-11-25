@@ -1,0 +1,252 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.main {
+    flex: 1;
+    padding: var(--spacing-3xl) 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+    transition: all var(--transition-base);
+}
+
+.backLink:hover {
+    color: var(--color-accent-primary);
+    transform: translateX(-5px);
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-3xl);
+}
+
+/* Form Section */
+.formSection {
+    padding: var(--spacing-2xl);
+    animation: fadeIn 1s ease-out;
+}
+
+.sectionTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-primary);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.label {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 0.95rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    outline: none;
+}
+
+.input:focus,
+.textarea:focus {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.6;
+}
+
+.message {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--color-success);
+    color: var(--color-success);
+}
+
+/* Info Section */
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.infoCard {
+    padding: var(--spacing-xl);
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+    transition: all var(--transition-base);
+}
+
+.infoCard:hover {
+    transform: translateY(-5px);
+}
+
+.iconWrapper {
+    margin-bottom: var(--spacing-md);
+}
+
+.icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+}
+
+.infoCard h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.infoCard p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-xs);
+}
+
+.infoCard a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.infoCard a:hover {
+    color: var(--color-accent-secondary);
+}
+
+.infoText {
+    font-size: 0.95rem;
+}
+
+/* FAQ Section */
+.faqSection {
+    padding: var(--spacing-2xl);
+    animation: fadeIn 1.2s ease-out;
+}
+
+.faqGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.faqItem {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+}
+
+.faqItem:hover {
+    background: var(--color-bg-tertiary);
+    transform: translateY(-3px);
+}
+
+.faqItem h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+}
+
+.faqItem p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.faqItem a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.faqItem a:hover {
+    color: var(--color-accent-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .formSection,
+    .faqSection {
+        padding: var(--spacing-lg);
+    }
+
+    .faqGrid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
